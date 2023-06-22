@@ -3,55 +3,117 @@
 // definire una funzione 'min' che dati due numeri
 // restituisce il minore
 
-function min(num1, num2) {
-    if (num1 < num2) {
-        return num1;
+// function min(num1, num2) {
+//     if (num1 < num2) {
+//         return num1;
+//     } else {
+//         return num2;
+//     }
+// }
+
+// const pikachu = min(9,7);
+// console.log(pikachu)
+
+// esercizio 1----------------------------------------------------------------------------------------
+
+// definire una funzione 'pow' che non faccia uso dell'operatore '**'
+// ne della libreria Math
+
+// function pow(base, exponent) {
+
+// }
+
+// esercizio 2 ---------------------------------------------------------------------------------------
+
+// definire una funzione 'correctCase' che prende in input una stringa e la restituisce
+// trasformando la prima lettera in maiuscolo
+
+// ' la casa blu' => 'La casa blu'
+
+function correctCase(stringToLog) {
+    if (stringToLog.length === 0) {
+        return str;
     } else {
-        return num2;
+
+        const firstLetter = stringToLog[0].toUpperCase();
+        const restOfString = stringToLog.slice(1);
+
+        return firstLetter + restOfString;
     }
 }
 
-const pikachu = min(9,7);
-console.log(pikachu)
+const stringToLog = 'Mi piace il ceviche'
+const finalString = correctCase(stringToLog)
 
-// La funzione min prende in input due parametri, num1 e num2, che rappresentano i due numeri da confrontare.Utilizza un'istruzione if 
-// per confrontare i due numeri. Se num1 è minore di num2, la funzione restituisce num1, altrimenti restituisce num2.
-// Ad esempio, se chiamiamo la funzione min(3, 7), il valore restituito sarà 3 perché 3 è il numero minore tra i due.
-// Se chiamiamo la funzione min(9, 2), il valore restituito sarà 2 perché 2 è il numero minore tra i due.
-// In sostanza, la funzione confronta i due numeri e restituisce quello più piccolo tra i due.
+console.log(finalString)
 
-// Certamente! Ecco una spiegazione passo passo su come ho convertito la funzione in lambda function:
+// (4,2) => 2
 
-// 1. Iniziamo dalla definizione originale della funzione:
-// ```javascript
-// function min(num1, num2) {
-//   if (num1 < num2) {
-//     return num1;
-//   } else {
-//     return num2;
-//   }
-// }
-// ```
+// esercizio 4 ------------------------------------------------------------------------------------
 
-// 2. Per trasformare questa funzione in una lambda function, iniziamo rimuovendo la parola chiave 'function':
-// ```javascript
-// const min = (num1, num2) => {
-//   if (num1 < num2) {
-//     return num1;
-//   } else {
-//     return num2;
-//   }
-// };
-// ```
+// definire una funzione 'clamp' che prende come parametri tre numeri:
+// valore, massimo e minimo.
+// Se valore è minore di minimo, restituisce minimo
+// se valore è maggiore di massimo, restituisce massimo
+// altrimenti restituisce valore
 
-// 3. Successivamente, convertiamo l'istruzione 'if' in un'operazione ternaria, che è una forma compatta di un'istruzione 'if-else'. L'operatore ternario ha la seguente sintassi: `(condizione) ? (valore se vero) : (valore se falso)`. Applichiamo questa trasformazione all'interno della lambda function:
-// ```javascript
-// const min = (num1, num2) => (num1 < num2) ? num1 : num2;
-// ```
+function clamp(valore, min, max) {
+    if (valore < min) {
+        return min;
+    } else if (valore > max) {
+        return max;
+    } else {
+        return valore;
+    }
 
-// 4. Infine, dato che la lambda function ha un'unica istruzione di 'return', possiamo omettere le parentesi graffe e la parola chiave 'return' per rendere la sintassi ancora più compatta:
-// ```javascript
-// const min = (num1, num2) => (num1 < num2) ? num1 : num2;
-// ```
+}
 
-// Ora abbiamo la funzione 'min' convertita in una lambda function. È importante notare che le lambda function sono solo una sintassi più concisa per definire funzioni e il comportamento della funzione rimane invariato.
+const crash = clamp(100, 4, 20)
+console.log(crash)
+
+// esercizio 5 ------------------------------------------------------------------------------------
+
+// definire una funzione chessboard che prende come parametro
+// size e stampa la scacchiera
+
+// esercizio 6 -------------------------------------------------------------------------------------------
+
+// definire funzione 'ellipse' che prende come parametro una stringa
+// se la  stringa è minore di 20 caratteri la ritorna non modificata
+// altrimenti la taglia a 20 caratteri e aggiunge 3 puntini
+
+function ellipse(stringOfTwenty) {
+    if (stringOfTwenty.length < 20) {
+        return stringOfTwenty;
+    } else {
+        return stringOfTwenty.slice(0, 20) + "...";
+    }
+}
+
+const mario = ellipse('a me piace molto il ceviche')
+console.log(mario)
+
+// esercizio 7 -------------------------------------------------------------------------------------------
+
+// definire una funzione reverseString che data una stringa la restituisce al contrario
+
+function reverseString(string) {
+    let reversed = "";
+
+    for (let i = string.length - 1; i >= 0; i--) {
+        reversed += string[i];
+    }
+
+    return reversed;
+}
+
+const inputString = "casa rosa";
+const reversedString = reverseString(inputString);
+
+console.log(reversedString);
+
+// ex 'casa rosa' => 'asor asac'
+
+// esercizio 8 -------------------------------------------------------------------------------------------
+
+// scrivere tutti gli esercizi in lamba
