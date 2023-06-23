@@ -14,14 +14,27 @@
 // const pikachu = min(9,7);
 // console.log(pikachu)
 
+// function min( firstNumber, secondNumber) {
+//     const minimum = firstNumber > secondNumber ? firstNumber : secondNumber;    
+// }
+
 // esercizio 1----------------------------------------------------------------------------------------
 
 // definire una funzione 'pow' che non faccia uso dell'operatore '**'
 // ne della libreria Math
 
-// function pow(base, exponent) {
+function pow(base, exponent){
 
-// }
+    let result = 1;
+
+    for (let i = 0; i < exponent; i++) {
+    result = result * base;
+    
+    }
+    return result;
+}
+
+console.log(pow(2,4));
 
 // esercizio 2 ---------------------------------------------------------------------------------------
 
@@ -32,9 +45,8 @@
 
 function correctCase(stringToLog) {
     if (stringToLog.length === 0) {
-        return str;
+        return 'mettila sta stringaaa';
     } else {
-
         const firstLetter = stringToLog[0].toUpperCase();
         const restOfString = stringToLog.slice(1);
 
@@ -42,7 +54,7 @@ function correctCase(stringToLog) {
     }
 }
 
-const stringToLog = 'Mi piace il ceviche'
+const stringToLog = 'mi piace il ceviche'
 const finalString = correctCase(stringToLog)
 
 console.log(finalString)
@@ -57,24 +69,45 @@ console.log(finalString)
 // se valore è maggiore di massimo, restituisce massimo
 // altrimenti restituisce valore
 
-function clamp(valore, min, max) {
-    if (valore < min) {
-        return min;
-    } else if (valore > max) {
-        return max;
-    } else {
-        return valore;
-    }
+// function clamp(valore, min, max) {
+//     if (valore < min) {
+//         return min;
+//     } else if (valore > max) {
+//         return max;
+//     } else {
+//         return valore;
+//     }
 
-}
+// }
 
-const crash = clamp(100, 4, 20)
-console.log(crash)
+// const crash = clamp(100, 4, 20)
+// console.log(crash)
 
 // esercizio 5 ------------------------------------------------------------------------------------
 
 // definire una funzione chessboard che prende come parametro
 // size e stampa la scacchiera
+
+//     function chessboard(size) {
+
+// let chessboardString = '';
+
+//         for (let i = 0; i < size; i++) {
+//             for (let j = 0; j < size; j++) {
+//                 if (i - j) % 2 === 0) {
+//                         chessboardString = chessboardString + 'x';
+//                 }
+//                     if (i - j) % 2 === 0) {
+//                         chessboardString = chessboardString + '❤';
+//                     }
+//                 }
+//             chessboardString = chessboardString + '\n'
+//         }
+        
+//         return chessboardString;
+//     }
+
+//     console.log 
 
 // esercizio 6 -------------------------------------------------------------------------------------------
 
@@ -82,15 +115,15 @@ console.log(crash)
 // se la  stringa è minore di 20 caratteri la ritorna non modificata
 // altrimenti la taglia a 20 caratteri e aggiunge 3 puntini
 
-function ellipse(stringOfTwenty) {
-    if (stringOfTwenty.length < 20) {
+function ellipse(stringOfTwenty, size = 20) {
+    if (stringOfTwenty.length < size) {
         return stringOfTwenty;
     } else {
-        return stringOfTwenty.slice(0, 20) + "...";
+        return stringOfTwenty.slice(0, ) + "...";
     }
 }
 
-const mario = ellipse('a me piace molto il ceviche')
+const mario = ellipse('a me piace molto la pizza')
 console.log(mario)
 
 // esercizio 7 -------------------------------------------------------------------------------------------
@@ -101,7 +134,8 @@ function reverseString(string) {
     let reversed = "";
 
     for (let i = string.length - 1; i >= 0; i--) {
-        reversed += string[i];
+        //reversed += string[i];
+        reversed = reversed + string[i]; // stessa cosa
     }
 
     return reversed;
