@@ -219,8 +219,31 @@ console.log(evenOrOdd(numbersArray))
 // 4) mapping function che prende in input un array di stringhe
 //    e le restituisce tutte minuscole
 
+function allLowerCase(selectedArray) {
+    const newArray = [];
+
+    for (let i = 0; i < selectedArray.length; i++) {
+        const element = selectedArray[i];
+
+        let newElement;
+        if (element === element.toUpperCase()) {
+            newElement = element.toLowerCase();
+        } else {
+            newElement = element.toLowerCase();
+        }
+
+        newArray.push(newElement);
+    }
+    return newArray;
+}
+
+console.log(allLowerCase(stringArray))
+
+
 // 5) mapping function che prende in input un array di strighe
 //    e restituisce un array di numeri con le lunghezze delle stringhe
+
+
 
 // 6) mapping function che prende in input un array di strighe
 //    e restituisce le stringhe in formato camelCase
