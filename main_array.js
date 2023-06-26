@@ -160,7 +160,6 @@ console.log('array')
        }
     return newArray;
 }
-
     console.log(removeOneFromAll(numbersArray))
 
     // PRIMO ESERCIZIO GIUSTO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -201,7 +200,7 @@ function evenOrOdd(selectedArray) {
         const element = selectedArray[i];
         
         let newElement; // crea una variabile vuota per gli elementi nuovi che verranno creati
-        if (element % 2 ===0) { // Se element è pari
+        if (element % 2 === 0) { // Se element è pari
             newElement = ('PARI') // stampa PARI
         } else { // Altrimenti
             newElement = ('DISPARI') // stampa DISPARI
@@ -225,12 +224,14 @@ function allLowerCase(selectedArray) {
     for (let i = 0; i < selectedArray.length; i++) {
         const element = selectedArray[i];
 
-        let newElement;
-        if (element === element.toUpperCase()) {
-            newElement = element.toLowerCase();
-        } else {
-            newElement = element.toLowerCase();
-        }
+        const newElement = element.toLowerCase();
+
+        // let newElement;
+        // if (element === element.toUpperCase()) {
+        //     newElement = element.toLowerCase();
+        // } else {
+        //     newElement = element.toLowerCase();
+        // }
 
         newArray.push(newElement);
     }
@@ -243,7 +244,26 @@ console.log(allLowerCase(stringArray))
 // 5) mapping function che prende in input un array di strighe
 //    e restituisce un array di numeri con le lunghezze delle stringhe
 
+function stringLenght(selectedArray) {
+    const newArray = [];
 
+    for (let i = 0; i < selectedArray.length; i++) {
+        const element = selectedArray[i];
+        
+        let newElement;
+        if (element === undefined) {
+            newElement = -1; // nessuna stringa potrà essere negativa
+        } else {
+            newElement = element.length;
+        }
+
+newArray.push(newElement)
+
+    }
+return newArray;
+}
+
+console.log(stringLenght(stringArray))
 
 // 6) mapping function che prende in input un array di strighe
 //    e restituisce le stringhe in formato camelCase
@@ -251,10 +271,34 @@ console.log(allLowerCase(stringArray))
 // 7) filter function che prende in input un array di stringhe
 //    e restituisce solo quelle più lunghe di tre caratteri
 
+function Only3Chars(selectedArray) {
+
+const newArray = [];
+
+for (let i = 0; i < selectedArray.length; i++) {
+    const element = selectedArray[i];
+
+    let newElement;
+    if (selectedArray.length < 3) {
+        newArray.push(newElement);      
+    } 
+    
+    }
+    return newArray;
+}
+
+console.log(Only3Chars(stringArray))
+
 // 8) filter function che prende in input un array di strighe
 //    e restituisce solo quelle che contengono la lettera 'p'
 
+
+if (element.toLowerCase().includes('p')) {
+    newArray.push(element);
+}
 // 9) filter function che prende in input un array di numeri
 //    e restituisce i positivi divisibili per 3
+
+
 
 // 10) fare una copia della home del sito di AXIA FORMAZIONE
